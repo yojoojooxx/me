@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>포폴사이트 과제</title>
+    <script src="lib/jquery-ui-1.13.1/external/jquery/jquery.js"></script>
+    <script src="lib/jquery-ui-1.13.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="lib/jquery-ui-1.13.1/jquery-ui.min.css" />
+    <link rel="stylesheet" href="css/animation.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <div id="header">
+      <div id="bg"></div>
+      <div id="top_bar"></div>
+      <div id="gnb">
+        <object
+          id="star"
+          type="image/svg+xml"
+          data="images/menu_b.svg"
+        ></object>
+
+        <div id="gnb_bt"></div>
+        <div id="menu_bg">
+          <img src="images/menu.png" />
+        </div>
+        <div id="menu_list">
+          <ul>
+            <li><a href="intro.html">소개</a></li>
+            <li><a href="#">아카이브</a></li>
+            <li><a href="#">이데아</a></li>
+            <li><a href="#">일상</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="logo">
+        <img src="images/logo.png" alt="logo" />
+      </div>
+      <div id="line">
+        <p>jeong yujin .<span> 01072202841</span> . yujin08111@naver.com .</p>
+      </div>
+    </div>
+
+    <div id="object1" class="dd">
+      <img src="images/a1.png" alt="전시" />
+      <p>전시</p>
+    </div>
+
+    <div id="object2" class="dd">
+      <img src="images/a2.png" alt="작업" />
+      <p>작업</p>
+    </div>
+
+    <div id="object3" class="dd">
+      <img src="images/a3.png" alt="반려초" />
+      <p>반려초</p>
+    </div>
+
+    <div id="object4" class="dd">
+      <img src="images/a4.png" alt="전시" />
+      <p>전시</p>
+    </div>
+
+    <div id="object5" class="dd">
+      <img src="images/a5.png" alt="선풍기" />
+      <p>선풍기</p>
+    </div>
+
+    <div id="object6" class="dd">
+      <img src="images/a6.png" alt="러그" />
+      <p>러그</p>
+    </div>
+
+    <div id="search">
+      <input type="text" placeholder="Search" />
+      <div id="eyes">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div id="search_result">메롱</div>
+    <script>
+      $(function () {
+        $(".dd").draggable();
+      });
+
+      let gnb = document.getElementById("gnb");
+      let bg = document.getElementById("bg");
+      gnb.addEventListener("click", function (e) {
+        gnb.classList.toggle("on");
+        bg.classList.toggle("on");
+      });
+
+      //   제이쿼리 문법
+      //   $("#gnb").click(function () {
+      //     $(this).toggleClass("on");
+      //     $("#bg").toggleClass("on");
+      //   });
+
+      $("#search input").keydown(function (e) {
+        if (e.keyCode == 13) {
+          $("#search_result").show();
+          setInterval(() => {
+            $("#search_result").fadeOut(300);
+          }, 3000);
+        }
+      });
+    </script>
+  </body>
+</html>
